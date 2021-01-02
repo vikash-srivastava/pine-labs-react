@@ -1,0 +1,10 @@
+    {
+        "CACHE_INVALIDATION_TTL": "0",
+        "REQUEST": null,
+        "REQUEST-ID": "8cff7cd8-adbd-4662-829a-92d762207620",
+        "RESPONSE": {
+            "pincode": 560064,
+            "valid": true
+        },
+        "STATUS_CODE": 200
+    }
