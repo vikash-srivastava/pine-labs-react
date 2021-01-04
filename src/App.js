@@ -1,9 +1,10 @@
 import './App.css';
 import { Userform } from "./components/userform/userform";
-function App() {
+function App() { //component
   return (  //JSX
     <div className="App">
-      <Userform label='First Name' color='cyan'></Userform>
+      <Userform label='First Name' color='white'></Userform>
+      <Userform label='First Name' color='white'></Userform>
       
 
     </div>

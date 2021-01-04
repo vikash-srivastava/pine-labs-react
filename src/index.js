@@ -7,7 +7,8 @@ ReactDOM.render( //main method
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root1')
+  document.getElementById('root1'),
+  ()=> console.log('app initialized')
 );
 
 // If you want to start measuring performance in your app, pass a function

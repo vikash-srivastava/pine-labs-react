@@ -7,18 +7,32 @@ import React from 'react';
 // }
 
 export class Userform extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            fname: 'Pariwesh1'
+        }
+    }//ES6
     save(event){
-        console.log(event);
+        console.log(this.state.fname);
     }
+    // save = (event) =>{
+    //     console.log(this.state.fname);
+    // }
     render() {
         return (
             <div>
-                <input placeholder={this.props.label} style={{ background: this.props.color }} />
-                <input placeholder='Last Name' style={{ background: this.props.color }} />
-                {/* <button onClick={(event)=>{
+                <input value={this.state.fname} onChange={(event) => {
+                    console.log(this.state.fname);
+                    // this.state.fname = event.target.value;  //this will not work
+                    this.setState({  //to rerender, call setState
+                        fname:event.target.value
+                    });
                     console.log(event);
-                }}>Save</button> */}
-                 <button onClick={this.save}>Save</button>
+                }} placeholder={this.props.label} style={{ background: this.props.color }} />
+                {/* <input placeholder='Last Name' style={{ background: this.props.color }} /> */}
+
+                <button onClick={this.save=this.save.bind(this)}>Save</button>
             </div>
         )
     }
