@@ -22,8 +22,13 @@ export class Userform extends React.Component {//MVC
             user: Object.assign(this.state.user, { [event.target.name]: event.target.value })
         });
     }
-    deleteUser = (index, secodnArg) => {
-        console.log(this);
+    deleteUser = function(index, secodnArg)  {
+        const decision = window.confirm('Are you sure??');
+        if(!decision){
+            return;
+        }
+        console.log(decision);
+        console.log(this); 
         console.log(index, secodnArg);
         this.state.users.splice(index, 1);
         this.setState({
