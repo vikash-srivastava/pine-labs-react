@@ -7,7 +7,7 @@ ReactDOM.render( //main method
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root1'),
+  document.getElementById('root'),
   ()=> console.log('app initialized')
 );
 

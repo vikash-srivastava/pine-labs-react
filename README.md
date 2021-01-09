@@ -1,3 +1,13 @@
+npm i -g create-react-app  //only once
+create-react-app App1
+
+npm start 
+
+git clone https://github.com/pariwesh06/pine-labs-react
+> npm i 
+> npm start
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
