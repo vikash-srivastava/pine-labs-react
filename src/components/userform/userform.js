@@ -14,13 +14,21 @@ export class Userform extends React.Component {//MVC
     save = (event) => {
         // this.state.users.push(this.state.user);
         this.setState({  //to rerender, call setState
-            users: [...this.state.users, Object.assign({},this.state.user)]
+            users: [...this.state.users, Object.assign({}, this.state.user)]
         });
     }
     handleEvent = (event) => {
         this.setState({  //to rerender, call setState
-            user: Object.assign(this.state.user,  { [event.target.name]: event.target.value })
+            user: Object.assign(this.state.user, { [event.target.name]: event.target.value })
         });
+    }
+    deleteUser = (index, secodnArg) => {
+        console.log(this);
+        console.log(index, secodnArg);
+        this.state.users.splice(index, 1);
+        this.setState({
+            users: this.state.users 
+        })
     }
     render() {
         const userModel = this.state.user;
@@ -38,11 +46,13 @@ export class Userform extends React.Component {//MVC
                         <th> Salary</th>
                     </thead>
                     <tbody>
-                        {this.state.users.map((user) => {
+                        {this.state.users.map( (user, index)=> {
+                            console.log(index);
                             return <tr>
                                 <td>{user.fname}</td>
                                 <td>{user.age}</td>
                                 <td>{user.salary}</td>
+                                <td><button onClick={this.deleteUser.bind(this, index, 34)}>Delete</button></td>
                             </tr>
                         })}
                     </tbody>
