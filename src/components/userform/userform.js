@@ -23,23 +23,26 @@ export class Userform extends React.Component {//MVC
         });
     }
     render() {
+        const userModel = this.state.user;
         return (
             <div>
-                <input value={this.state.user.fname} name='fname' onChange={this.handleEvent} placeholder={this.props.label} style={{ background: this.props.color }} />
-                <input value={this.state.user.age} name='age' onChange={this.handleEvent}
+                <input value={userModel.fname} name='fname' onChange={this.handleEvent} placeholder={this.props.label} style={{ background: this.props.color }} />
+                <input value={userModel.age} name='age' onChange={this.handleEvent}
                     placeholder='first Name copy' style={{ background: this.props.color }} />
-
+                <input placeholder='salary' value={userModel.salary} onChange={this.handleEvent} name='salary'></input>
                 <button onClick={this.save}>Save</button>
                 <table>
                     <thead >
                         <th>First Name</th>
                         <th> Age</th>
+                        <th> Salary</th>
                     </thead>
                     <tbody>
                         {this.state.users.map((user) => {
                             return <tr>
                                 <td>{user.fname}</td>
                                 <td>{user.age}</td>
+                                <td>{user.salary}</td>
                             </tr>
                         })}
                     </tbody>
