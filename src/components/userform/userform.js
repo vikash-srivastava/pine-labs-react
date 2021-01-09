@@ -4,27 +4,30 @@ export class Userform extends React.Component {//MVC
     constructor() { //only one 
         super();
         this.state = { //model
-            fname: 'Pariwesh1',
-            age:30
+            user: {
+                fname: 'Pariwesh1',
+                age: 30,
+            },
+            users: []
         }
     }//ES6
-    save = (event) =>{
+    save = (event) => {
+        // this.state.users.push(this.state.user);
         this.setState({  //to rerender, call setState
-            copy:this.state.fname
+            users: [...this.state.users, Object.assign({},this.state.user)]
         });
-        console.log(this.state.fname);
     }
-    handleEvent= (event) => {
+    handleEvent = (event) => {
         this.setState({  //to rerender, call setState
-            [event.target.name]:event.target.value
+            user: Object.assign(this.state.user,  { [event.target.name]: event.target.value })
         });
     }
     render() {
         return (
             <div>
-                <input value={this.state.fname} name='fname' onChange={this.handleEvent} placeholder={this.props.label} style={{ background: this.props.color }} />
-                <input value={this.state.age} name='age' onChange={this.handleEvent}
-                 placeholder='first Name copy' style={{ background: this.props.color }} />
+                <input value={this.state.user.fname} name='fname' onChange={this.handleEvent} placeholder={this.props.label} style={{ background: this.props.color }} />
+                <input value={this.state.user.age} name='age' onChange={this.handleEvent}
+                    placeholder='first Name copy' style={{ background: this.props.color }} />
 
                 <button onClick={this.save}>Save</button>
                 <table>
@@ -33,11 +36,12 @@ export class Userform extends React.Component {//MVC
                         <th> Age</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Pariwesh</td>
-                            <td>30</td>
-
-                        </tr>
+                        {this.state.users.map((user) => {
+                            return <tr>
+                                <td>{user.fname}</td>
+                                <td>{user.age}</td>
+                            </tr>
+                        })}
                     </tbody>
                 </table>
             </div>
