@@ -13,11 +13,14 @@ export class Userform extends React.Component {//MVC
         }
     }//ES6
     save = (event) => {
-        BackendService.saveUser(this.state.user);
-
-        // this.setState({  //to rerender, call setState
-        //     users: [...this.state.users, Object.assign({}, this.state.user)]
-        // });
+        BackendService.saveUser(this.state.user, 
+            (response)=>{ //success callback functions
+                this.setState({  //to rerender, call setState
+                    users: [...this.state.users, Object.assign({}, this.state.user)]
+                });
+            }).fail((error)=>{
+                alert('Somemthing went wrong, please retry..');
+            });
     }
     handleEvent = (event) => {
         this.setState({  //to rerender, call setState
