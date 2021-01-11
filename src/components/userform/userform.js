@@ -1,4 +1,5 @@
 import React from 'react';
+import { BackendService } from '../../backend-service';
 import './userform.css';
 export class Userform extends React.Component {//MVC
     constructor() { //only one 
@@ -12,10 +13,11 @@ export class Userform extends React.Component {//MVC
         }
     }//ES6
     save = (event) => {
-        // this.state.users.push(this.state.user);
-        this.setState({  //to rerender, call setState
-            users: [...this.state.users, Object.assign({}, this.state.user)]
-        });
+        BackendService.saveUser(this.state.user);
+
+        // this.setState({  //to rerender, call setState
+        //     users: [...this.state.users, Object.assign({}, this.state.user)]
+        // });
     }
     handleEvent = (event) => {
         this.setState({  //to rerender, call setState
@@ -52,7 +54,6 @@ export class Userform extends React.Component {//MVC
                     </thead>
                     <tbody>
                         {this.state.users.map( (user, index)=> {
-                            console.log(index);
                             return <tr>
                                 <td>{user.fname}</td>
                                 <td>{user.age}</td>
