@@ -1,9 +1,123 @@
 {
   "users": [
     {
-      "fname": "Pariwesh1",
+      "fname": "Vikash",
+      "lname": "Srivastava",
       "age": "30",
-      "id": 1
+      "salary": "500",
+      "id": 2
+    },
+    {
+      "fname": "Vikash",
+      "age": "32",
+      "id": 3
+    },
+    {
+      "fname": "Vikash Srivastava",
+      "age": "30",
+      "salary": "500",
+      "id": 4
+    },
+    {
+      "fname": "Vikash",
+      "lname": "Srivastava",
+      "age": "32",
+      "salary": "20000",
+      "id": 6
+    },
+    {
+      "fname": "Vikash",
+      "lname": "Srivastava",
+      "age": "32",
+      "salary": "20000",
+      "id": 7
+    },
+    {
+      "fname": "Vikash to delete",
+      "lname": "Srivastava",
+      "age": "32",
+      "salary": "20000",
+      "id": 8
+    },
+    {
+      "fname": "Vikash",
+      "lname": "Srivastava",
+      "age": "32",
+      "salary": "20000",
+      "id": 9
+    },
+    {
+      "fname": "Vikash",
+      "lname": "Srivastava",
+      "age": "32",
+      "salary": "20000",
+      "id": 10
+    },
+    {
+      "fname": "Vikash",
+      "lname": "Srivastava",
+      "age": "32",
+      "salary": "500000",
+      "id": 11
+    },
+    {
+      "fname": "Vikash",
+      "lname": "Srivastava",
+      "age": "32",
+      "salary": "20000",
+      "gender": "M",
+      "id": 12
+    },
+    {
+      "fname": "Vikash",
+      "lname": "Srivastava",
+      "age": "32",
+      "salary": "20000",
+      "gender": "M",
+      "id": 13
+    },
+    {
+      "fname": "Vikash",
+      "lname": "Srivastava",
+      "age": "32",
+      "salary": "20000",
+      "gender": "M",
+      "id": 14
+    },
+    {
+      "fname": "Vikash",
+      "lname": "Srivastava",
+      "age": "32",
+      "salary": "20000",
+      "gender": "F",
+      "id": 15
+    },
+    {
+      "fname": "Vikash Lead",
+      "lname": "Srivastava",
+      "age": "32",
+      "salary": "20000",
+      "gender": "M",
+      "role": "Lead",
+      "id": 17
     }
-  ]
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "roles" : ["Programmer", "Lead", "Manager"]
 }
